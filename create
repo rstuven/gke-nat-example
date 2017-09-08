@@ -1,7 +1,7 @@
 #!/bin/sh
 
 gcloud deployment-manager deployments create gke-with-nat --config gke-with-nat-route.yml
-gcloud container clusters  get-credentials nat-gke-cluster
+gcloud container clusters get-credentials nat-gke-cluster --zone us-central1-b
 
 kubectl apply -f kubernetes/nginx-pod.yml
 echo "waiting for 10 seconds for  pod to start" 
